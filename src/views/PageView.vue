@@ -18,26 +18,19 @@ function getPage(pageNo:number) {
 
 </script>
 <template>
-  <div class="grid grid-cols-1">
+  <div class="rube">
     <h1>Page {{ pager.page }}</h1>
-    <div class="justify-center flex items-center h-screen">
-      <div class="text-4xl">
-        <object class="rube" type="text/html" :data="getPage(pager.page)"></object>
-      </div>
+    <div>
+      <object type="text/html" :data="getPage(pager.page)"></object>
     </div>
+
   </div>
 </template>
 
 <style>
 @media (min-width: 1024px) {
-  .pageview {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
   .rube {
     min-height: 100vh;
-    min-width: 200vh;
     display: flex;
     align-items: center;
   }
