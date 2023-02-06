@@ -19,8 +19,8 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '/page/:pageno',
-      name: 'page',
+      path: '/rube/:pageno',
+      name: 'rube',
       component: PageView
     },
   ]

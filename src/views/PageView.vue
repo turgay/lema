@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import { usePagerStore } from '../stores/pager'
-
-const pager = usePagerStore()
-
 
 defineProps<{
 
@@ -14,9 +10,9 @@ function getPage(pageNo:number) {
 
 </script>
 <template>
-  <div class="row">
-    <h1>Page {{ pager.page }}</h1>
-      <object width='100%' height="800" type="text/html" :data="getPage(pager.page)"></object>
+  <div class="row pt-5">
+    <div class="float-end text-center"> sayfa {{ $route.params.pageno }} </div>
+    <object width='100%' height="800" type="text/html" :data="getPage($route.params.pageno)"></object>
   </div>
 </template>
 
