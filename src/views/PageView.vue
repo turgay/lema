@@ -3,12 +3,8 @@ import { usePagerStore } from '../stores/pager'
 
 const pager = usePagerStore()
 
-//document.getElementById("content").innerHTML='<object type="text/html" data="rube_' + ind + '.html" ></object>';
 
-//const pageUrl = "/rube/rube_" +pager.page + ".html"
-    
 defineProps<{
-  //pageNum: number
 
 }>()
 
@@ -18,21 +14,17 @@ function getPage(pageNo:number) {
 
 </script>
 <template>
-  <div class="rube">
+  <div class="row">
     <h1>Page {{ pager.page }}</h1>
-    <div>
-      <object type="text/html" :data="getPage(pager.page)"></object>
-    </div>
-
+      <object width='100%' height="800" type="text/html" :data="getPage(pager.page)"></object>
   </div>
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .rube {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+  object {
+    font-family: "Merriweather", Helvetica, Arial;
+    font-size: 14px;
+    background-color: amber;
+    font-style: bold;
   }
-}
 </style>

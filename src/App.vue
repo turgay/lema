@@ -1,89 +1,63 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import Dibace from './components/Dibace.vue'
 import Navigator from './components/Navigator.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+<div id="app">
 
-    <div class="wrapper">
-      <Dibace msg="Rûḥu'l-Beyân" /> 
-      <Navigator msg="Rûḥu'l-Beyân" page-num=""/> 
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/rube">Ruhul Beyan</RouterLink>
-        <RouterLink to="/page/11">page 11</RouterLink>
-      </nav>
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Fixed navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>      
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+                <a class="nav-link" href=""> <RouterLink to="/">Home</RouterLink></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href=""> <RouterLink to="/about">About</RouterLink></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href=""> <RouterLink to="/rube">Ruhul Beyan</RouterLink></a>
+            </li>
+                <li class="nav-item">
+                <a class="nav-link" href=""><RouterLink to="/page/11">page 11</RouterLink></a>
+            </li>
+        </ul>
+        <div class="d-flex px-4">
+            <Navigator title="Rûḥu'l-Beyân" page-num="$route.params.pageno"/> 
+        </div>
+        <form class="d-flex">         
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
     </div>
-  </header>
+  </nav>
+</header>
 
-  <RouterView />
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+  <div class="container">
+    <h2 class="mt-5">Ruhul Beyan</h2>     
+    <RouterView />
+  </div>
+</main>
+
+<footer class="footer mt-auto py-3 bg-light">
+  <div class="container">
+    <span class="text-muted">Place sticky footer content here.</span>
+  </div>
+</footer>
+</div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>
