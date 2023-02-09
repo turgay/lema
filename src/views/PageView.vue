@@ -1,23 +1,26 @@
 <script setup lang="ts">
 
-defineProps<{
+import { usePagerStore } from '../stores/pager'
+import Navigator from '../components/Navigator.vue'
 
-}>()
+import { useRoute } from 'vue-router'
 
-function getPage(pageNo:number) {
-    return "/rube/rube_" +pageNo + ".html"
-  }
+const route = useRoute()
+
+const pager = usePagerStore()
+
+pager.toPage(+route.params.pageno)
 
 </script>
 <template>
   <div class="row pt-5">
-    <div class="float-end text-center"> sayfa {{ $route.params.pageno }} </div>
-    <object width='100%' height="800" type="text/html" :data="getPage($route.params.pageno)"></object>
+    <Navigator title="Rûḥu'l-Beyân" :pageNum="pager.page"/>
+    <div class="rube" v-html="pager.rubeHtml"></div>
   </div>
 </template>
 
 <style>
-  object {
+  rube {
     font-family: "Merriweather", Helvetica, Arial;
     font-size: 14px;
     background-color: amber;
