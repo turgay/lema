@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import Navigator from './components/Navigator.vue'
 </script>
 
 <template>
@@ -17,19 +16,16 @@ import Navigator from './components/Navigator.vue'
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link" href=""><RouterLink to="/rube/11">Rûḥu'l-Beyân</RouterLink></a>
+              <a class="nav-link" href=""><RouterLink to="/rube/1">Rûḥu'l-Beyân</RouterLink></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item d-none">
               <a class="nav-link" href=""> <RouterLink to="/">Home</RouterLink></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item d-none">
               <a class="nav-link" href=""> <RouterLink to="/about">About</RouterLink></a>
             </li>
         </ul>
-        <div class="d-flex px-4">
-            <Navigator title="Rûḥu'l-Beyân" :pageNum="$route.params.pageno"/>
-        </div>
-        <form class="d-flex">         
+        <form class="d-flex d-none">         
           <input class="form-control me-2" type="search" placeholder="..todo.." aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
