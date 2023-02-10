@@ -33,11 +33,18 @@ function nextPage() {
 
 <template>
   <div class="navigator pb-3">
-    <label for="page_input" class="text-right px-2">{{ title }}:</label>
+    <label for="page_input" class="text-right px-2">{{ title }} - Sayfa:</label>
+
     <button type="submit" title="<" @click="prevPage()"> &lt; </button>
     <input class="pageNum" id="page_input" type="number" :value="pager.page" @change="changePage">  
     <button type="submit" @click="nextPage()"> &gt; </button>
   
+    <label for="surahList" class="text-right px-2">Sure: </label>
+    <input list="surahOptions" id="surahList" placeholder="ara">
+    <datalist id="surahOptions">
+      <option v-for="(surah, i) in pager.allSurahs" :key="i">{{ surah['index'] }}. {{ surah['name'] }}</option>
+    </datalist>
+
   </div>
 </template>
 
