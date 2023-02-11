@@ -43,7 +43,7 @@ function nextPage() {
 
 <style scoped>
 .pageNum {
-  width: 4em;
+  width: 5em;
   text-align: center;
 }
 </style>
