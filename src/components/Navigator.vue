@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineComponent, ref } from 'vue'
 import router from "@/router";
 import { usePagerStore } from '../stores/pager'
 
@@ -14,6 +13,10 @@ function changePage(e, pageno = +e.target.value) {
   goToPage(pageno)
 }
 
+function changeSurah(e, pageno = +e.target.value) {
+  if (pageno) goToPage(pageno)
+}
+
 function goToPage(pageno: number) {
   router.push({path: `/rube/${pageno}`})
   pager.toPage(pageno)
@@ -26,18 +29,28 @@ function prevPage() {
 }
 
 function nextPage() {
-  goToPage(pager.page as number + 1)
+  if (pager.page < 10955) {
+    goToPage(pager.page as number + 1)
+  }
 }
 
 </script>
 
 <template>
   <div class="navigator pb-3">
-    <label for="page_input" class="text-right px-2">{{ title }}:</label>
+    <label for="page_input" class="text-right px-2">{{ title }} - Sayfa:</label>
+
     <button type="submit" title="<" @click="prevPage()"> &lt; </button>
     <input class="pageNum" id="page_input" type="number" :value="pager.page" @change="changePage">  
     <button type="submit" @click="nextPage()"> &gt; </button>
   
+    <label for="surahList" class="text-right px-2">Sure: </label>
+    <input list="surahOptions" id="surahList" placeholder="ara" :value="pager.surah ? (pager.surah.index + '.' + pager.surah.name) : ''"
+    @input="changeSurah">
+    <datalist id="surahOptions">
+      <option v-for="(surah, i) in pager.allSurahs" :key="i" v-bind:value="surah.startPage">{{ surah['index'] }}. {{ surah['name'] }}</option>      
+    </datalist>
+
   </div>
 </template>
 

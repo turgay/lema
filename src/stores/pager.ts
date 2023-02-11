@@ -1,12 +1,14 @@
-//import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
+import { surahList } from './surah_index'
 
 
 export const usePagerStore = defineStore("pager", {
   state: () => {
     return {
       page: 0,
-      rubeHtml: ""
+      surah: {},
+      rubeHtml: "",
+      surahs: []
     }
   },
   actions: {   
@@ -15,13 +17,16 @@ export const usePagerStore = defineStore("pager", {
     },
     toPage(pageNum: number) {
       this.page = pageNum
+      this.surah = this.findSurahByPage(pageNum)
       this.loadHTML(pageNum)
     },
-    getPage(pageNo:number) {
-      return "/rube/rube_" +pageNo + ".html"
-    },
-    async loadHTML(pageNo:number) {
-      return fetch(this.getPage(pageNo))
+    findSurahByPage(pageNum: number) {
+      return surahList.find((surah) => {
+        return surah.startPage <= pageNum && surah.endPage >= pageNum
+      })    
+   },
+   async loadHTML(pageNo:number) {
+      return fetch("/rube/rube_" +pageNo + ".html")
                 .then( (resp) => {
                     if(resp.status === 200){
                         return resp.text();
@@ -36,5 +41,11 @@ export const usePagerStore = defineStore("pager", {
                     console.log(error);
                 })
     }
+  },
+  getters: {
+    allSurahs() {
+      return surahList;
+    }
   }
-})
+}
+)
