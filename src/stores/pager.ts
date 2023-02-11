@@ -6,6 +6,7 @@ export const usePagerStore = defineStore("pager", {
   state: () => {
     return {
       page: 0,
+      surah: {},
       rubeHtml: "",
       surahs: []
     }
@@ -16,9 +17,15 @@ export const usePagerStore = defineStore("pager", {
     },
     toPage(pageNum: number) {
       this.page = pageNum
+      this.surah = this.findSurahByPage(pageNum)
       this.loadHTML(pageNum)
     },
-    async loadHTML(pageNo:number) {
+    findSurahByPage(pageNum: number) {
+      return surahList.find((surah) => {
+        return surah.startPage <= pageNum && surah.endPage >= pageNum
+      })    
+   },
+   async loadHTML(pageNo:number) {
       return fetch("/rube/rube_" +pageNo + ".html")
                 .then( (resp) => {
                     if(resp.status === 200){
@@ -40,4 +47,5 @@ export const usePagerStore = defineStore("pager", {
       return surahList;
     }
   }
-})
+}
+)

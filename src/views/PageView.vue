@@ -11,6 +11,7 @@ const pager = usePagerStore()
 
 pager.toPage(+route.params.pageno)
 
+
 </script>
 <template>
   <div class="row pt-5">
