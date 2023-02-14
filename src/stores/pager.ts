@@ -26,7 +26,10 @@ export const usePagerStore = defineStore("pager", {
       })    
    },
    async loadHTML(pageNo:number) {
-      return fetch("/rube/rube_" +pageNo + ".html")
+      // const pageFile = ((pageNo >= 2050) ? "/rube/rube_" +pageNo + ".html" : "/1_rube/" +pageNo + ".html")
+      const pageFile =  "/rube/rube_" +pageNo + ".html" 
+      console.log(pageFile)
+      return fetch(pageFile)
                 .then( (resp) => {
                     if(resp.status === 200){
                         return resp.text();
