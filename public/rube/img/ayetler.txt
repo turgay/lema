@@ -168,7 +168,6 @@ RuhulBeyan-10095_1.jpg
 RuhulBeyan-10095_2.jpg
 RuhulBeyan-10095_3.jpg
 RuhulBeyan-10096_4.jpg
-RuhulBeyan-10097_1.jpg
 RuhulBeyan-10097_4.jpg
 RuhulBeyan-10098_2.jpg
 RuhulBeyan-10101_1.jpg
@@ -389,8 +388,6 @@ RuhulBeyan-10220_5.jpg
 RuhulBeyan-10221_2.jpg
 RuhulBeyan-10222_2.jpg
 RuhulBeyan-10222_4.jpg
-RuhulBeyan-10223_8.jpg
-RuhulBeyan-10223_9.jpg
 RuhulBeyan-10225_1.jpg
 RuhulBeyan-10226_2.jpg
 RuhulBeyan-10226_3.jpg
@@ -425,7 +422,6 @@ RuhulBeyan-10248_9.jpg
 RuhulBeyan-10249_4.jpg
 RuhulBeyan-1024_2.jpg
 RuhulBeyan-1024_3.jpg
-RuhulBeyan-10252_1.jpg
 RuhulBeyan-10252_4.jpg
 RuhulBeyan-10253_2.jpg
 RuhulBeyan-10254_2.jpg
@@ -604,7 +600,6 @@ RuhulBeyan-10356_1.jpg
 RuhulBeyan-10356_2.jpg
 RuhulBeyan-10356_3.jpg
 RuhulBeyan-10356_4.jpg
-RuhulBeyan-10357_1.jpg
 RuhulBeyan-10358_2.jpg
 RuhulBeyan-10359_2.jpg
 RuhulBeyan-10359_3.jpg
@@ -1129,10 +1124,8 @@ RuhulBeyan-10683_6.jpg
 RuhulBeyan-10684_2.jpg
 RuhulBeyan-10686_1.jpg
 RuhulBeyan-10686_3.jpg
-RuhulBeyan-10686_5.jpg
 RuhulBeyan-10687_2.jpg
 RuhulBeyan-10687_4.jpg
-RuhulBeyan-10687_7.jpg
 RuhulBeyan-10688_2.jpg
 RuhulBeyan-10688_4.jpg
 RuhulBeyan-10688_6.jpg
@@ -1148,8 +1141,6 @@ RuhulBeyan-10694_3.jpg
 RuhulBeyan-10694_4.jpg
 RuhulBeyan-10694_5.jpg
 RuhulBeyan-10694_8.jpg
-RuhulBeyan-10696_3.jpg
-RuhulBeyan-10696_4.jpg
 RuhulBeyan-10696_7.jpg
 RuhulBeyan-10697_2.jpg
 RuhulBeyan-10697_4.jpg
@@ -1165,8 +1156,6 @@ RuhulBeyan-10704_3.jpg
 RuhulBeyan-10704_6.jpg
 RuhulBeyan-10705_2.jpg
 RuhulBeyan-10706_1.jpg
-RuhulBeyan-10706_3.jpg
-RuhulBeyan-10706_4.jpg
 RuhulBeyan-10707_2.jpg
 RuhulBeyan-10708_1.jpg
 RuhulBeyan-10709_1.jpg
@@ -1492,7 +1481,6 @@ RuhulBeyan-1092_3.jpg
 RuhulBeyan-1092_4.jpg
 RuhulBeyan-1092_5.jpg
 RuhulBeyan-10930_8.jpg
-RuhulBeyan-10931_3.jpg
 RuhulBeyan-10934_1.jpg
 RuhulBeyan-10934_2.jpg
 RuhulBeyan-10934_3.jpg
@@ -8121,7 +8109,6 @@ RuhulBeyan-4785_1.jpg
 RuhulBeyan-4785_2.jpg
 RuhulBeyan-4785_3.jpg
 RuhulBeyan-4788_1.jpg
-RuhulBeyan-4789_2.jpg
 RuhulBeyan-4793_1.jpg
 RuhulBeyan-4794_1.jpg
 RuhulBeyan-4798_1.jpg
@@ -8515,7 +8502,6 @@ RuhulBeyan-4991_4.jpg
 RuhulBeyan-4991_5.jpg
 RuhulBeyan-4995_2.jpg
 RuhulBeyan-4997_1.jpg
-RuhulBeyan-4997_12.jpg
 RuhulBeyan-4997_2.jpg
 RuhulBeyan-4997_3.jpg
 RuhulBeyan-4997_4.jpg
