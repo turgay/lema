@@ -1,12 +1,20 @@
 import { defineStore } from 'pinia'
 import { surahList } from './surah_index'
+import type { Surah } from './model'
 
+
+interface PageState {
+  page: number,
+  surah: Surah|undefined,
+  rubeHtml: String,
+  surahs: Array<Surah>
+}
 
 export const usePagerStore = defineStore("pager", {
   state: () => {
-    return {
+    return <PageState>{
       page: 0,
-      surah: {},
+      surah: undefined,
       rubeHtml: "",
       surahs: []
     }

@@ -1,10 +1,5 @@
-interface Surah {
-    name: string,
-    index: number,
-    startPage: number,
-    endPage: number
+import type { Surah } from './model'
 
-}
 export const surahList: Array<Surah> = [
     <Surah>{ name: "Fatiha", index: 1, startPage: 71, endPage: 102 },
     <Surah>{ name: "Bakara", index: 2, startPage: 103, endPage: 894 },

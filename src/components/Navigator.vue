@@ -9,11 +9,18 @@ const props = defineProps<{
   title: string,
 }>()
 
-function changePage(e, pageno = +e.target.value) {
+function getValue(e: Event) {
+  if (e && e.target) {
+    return (e.target as HTMLInputElement).value
+  }
+  return 0
+}
+
+function changePage(e: Event, pageno = +getValue(e)) {
   goToPage(pageno)
 }
 
-function changeSurah(e, pageno = +e.target.value) {
+function changeSurah(e: Event, pageno = +getValue(e)) {
   if (pageno) goToPage(pageno)
 }
 
