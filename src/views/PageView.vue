@@ -9,6 +9,8 @@ const route = useRoute()
 
 const pager = usePagerStore()
 
+console.log("route.params.pageno")
+console.log(route.params.pageno)
 pager.toPage(+route.params.pageno)
 
 
