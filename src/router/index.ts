@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import PageView from '../views/PageView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,7 +20,7 @@ const router = createRouter({
     {
       path: '/rube/:pageno',
       name: 'rube',
-      component: PageView
+      component: () => import('../views/PageView.vue')
     },
   ]
 })
