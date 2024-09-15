@@ -112,7 +112,7 @@ function ClientLayoutContent({ children }: { children: React.ReactNode }) {
                             <button className="p-1 sm:p-2 hover:bg-gray-100" onClick={increasePage}>&gt;</button>
                         </div>
                         <select
-                            className="p-1 sm:p-2 border rounded w-24 sm:w-40"
+                            className="p-1 sm:p-2 border rounded w-40 sm:w-48"
                             onChange={handleSurahChange}
                             value={selectedSurah}
                         >
