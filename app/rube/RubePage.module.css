@@ -1,18 +1,28 @@
+.bookPage {
+  width: 100%;
+  max-width: 100%;
+  min-height: 600px;
+  background-color: white;
+  
+  padding: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-y: auto;
+}
+
+@media (min-width: 640px) {
   .bookPage {
     width: 80%;
     max-width: 1000px;
-    min-height: 600px;
-    background-color: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 40px;
     border-radius: 10px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 16px;
-    line-height: 1.6;
-    overflow-y: auto;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   }
+}
 
-  .content {
-    font-size: 18px; /* Adjust this value as needed */
-    line-height: 1.8; /* Improves readability */
-  }
+.content {
+  font-size: 18px;
+  line-height: 1.8;
+}

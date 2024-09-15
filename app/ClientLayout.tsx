@@ -79,17 +79,17 @@ function ClientLayoutContent({ children }: { children: React.ReactNode }) {
 
     return (
         <div className="flex flex-col min-h-screen">
-            <header className="p-4 border-b">
-                <div className="max-w-5xl mx-auto flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                        <Link href="/" className="text-2xl font-bold text-emerald-600 hover:text-emerald-700">
+            <header className="p-2 sm:p-4 border-b">
+                <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between space-y-2 sm:space-y-0">
+                    <div className="flex items-center space-x-2 sm:space-x-4">
+                        <Link href="/" className="text-xl sm:text-2xl font-bold text-emerald-600 hover:text-emerald-700">
                             Lema
                         </Link>
-                        <nav className="flex items-center space-x-4">
+                        <nav className="flex items-center space-x-2 sm:space-x-4">
                         {isBookPage && (
                             <>
-                                <Link href="/" className="p-2">←</Link>
-                                <Link href="/rube" className="text-md font-semibold hover:underline">
+                                <Link href="/" className="p-1 sm:p-2">←</Link>
+                                <Link href="/rube" className="text-sm sm:text-md font-semibold hover:underline">
                                     Ruhu&apos;l Beyan
                                 </Link>
                             </>
@@ -97,22 +97,22 @@ function ClientLayoutContent({ children }: { children: React.ReactNode }) {
                         </nav>
                     </div>
                     {isBookPage && (
-                    <div className="flex items-center space-x-4">
-                        <button className="p-2">🔍</button>
+                    <div className="flex items-center space-x-2 sm:space-x-4">
+                        <button className="p-1 sm:p-2">🔍</button>
                         <div className="flex items-center border rounded">
-                            <button className="p-2 hover:bg-gray-100" onClick={decreasePage}>&lt;</button>
+                            <button className="p-1 sm:p-2 hover:bg-gray-100" onClick={decreasePage}>&lt;</button>
                             <input
                                 type="number"
-                                className="w-20 p-2 text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                                className="w-16 sm:w-20 p-1 sm:p-2 text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                                 placeholder="Sayfa"
                                 min="1"
                                 value={pageNum}
                                 onChange={handlePageChange}
                             />
-                            <button className="p-2 hover:bg-gray-100" onClick={increasePage}>&gt;</button>
+                            <button className="p-1 sm:p-2 hover:bg-gray-100" onClick={increasePage}>&gt;</button>
                         </div>
                         <select
-                            className="p-2 border rounded w-48"
+                            className="p-1 sm:p-2 border rounded w-24 sm:w-40"
                             onChange={handleSurahChange}
                             value={selectedSurah}
                         >
@@ -126,13 +126,15 @@ function ClientLayoutContent({ children }: { children: React.ReactNode }) {
                     )}
                 </div>
             </header>
-            <main className="flex-grow">
-                <div className="grid grid-rows-[1fr_auto] items-center justify-items-center min-h-full p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-                    {children}
-                    <footer className="flex items-center justify-between w-full max-w-3xl mx-auto text-sm text-gray-500">
+            <main className="flex-grow overflow-x-hidden w-full">
+                <div className="flex flex-col justify-between min-h-full w-full font-[family-name:var(--font-geist-sans)]">
+                    <div className="flex-grow w-full">
+                        {children}
+                    </div>
+                    <footer className="mt-8 p-4 sm:p-8 flex flex-col sm:flex-row items-center justify-between w-full max-w-3xl mx-auto text-sm text-gray-500 space-y-2 sm:space-y-0">
                         <div>2024 🍃 Lema</div>
                         <div className="flex space-x-4">
-                            <a href="#" className="hover:text-gray-700">
+                        <a href="#" className="hover:text-gray-700">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                                 </svg>
