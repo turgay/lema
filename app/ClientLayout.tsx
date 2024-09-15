@@ -15,11 +15,11 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     const searchParams = useSearchParams();
     const [pageNum, setPageNum] = useState('');
     const [selectedSurah, setSelectedSurah] = useState('');
-    const isBookPage = pathname.startsWith('/rube'); // TODO Update this when more books are added
+    const isBookPage = pathname?.startsWith('/rube'); // TODO Update this when more books are added
 
 
     useEffect(() => {
-        const page = searchParams.get('page');
+        const page = searchParams?.get('page');
         if (page) {
             setPageNum(page);
             updateSelectedSurah(page);
