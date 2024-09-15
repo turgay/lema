@@ -123,7 +123,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
                         >
                             {surahList.map((surah) => (
                                 <option key={surah.index} value={surah.startPage}>
-                                    {surah.index}. {surah.name} <span className="text-xs text-gray-500">({surah.startPage})</span>
+                                    {surah.index}. {surah.name} ({surah.startPage})
                                 </option>
                             ))}
                         </select>
