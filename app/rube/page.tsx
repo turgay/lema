@@ -10,7 +10,7 @@ export default function RubePage() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const page = searchParams.get('page') || '1';
+    const page = searchParams?.get('page') || '1';
     fetchPageContent(parseInt(page, 10));
   }, [searchParams]);
 
