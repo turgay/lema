@@ -1,21 +1,17 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
-
 import { surahList } from '../lib/surah_index';
-
-
 import Link from "next/link";
 
-export default function ClientLayout({ children }: { children: React.ReactNode }) {
+function ClientLayoutContent({ children }: { children: React.ReactNode }) {
     const router = useRouter();
     const pathname = usePathname();
     const searchParams = useSearchParams();
     const [pageNum, setPageNum] = useState('');
     const [selectedSurah, setSelectedSurah] = useState('');
     const isBookPage = pathname?.startsWith('/rube'); // TODO Update this when more books are added
-
 
     useEffect(() => {
         const page = searchParams?.get('page');
@@ -127,7 +123,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
                             ))}
                         </select>
                     </div>
-                      )}
+                    )}
                 </div>
             </header>
             <main className="flex-grow">
@@ -156,5 +152,15 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
                 </div>
             </main>
         </div>
+    );
+}
+
+export default function ClientLayout({ children }: { children: React.ReactNode }) {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <ClientLayoutContent>
+                {children}
+            </ClientLayoutContent>
+        </Suspense>
     );
 }
