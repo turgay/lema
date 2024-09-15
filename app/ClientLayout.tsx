@@ -7,7 +7,6 @@ import { surahList } from '../lib/surah_index';
 
 
 import Link from "next/link";
-import Image from "next/image";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
     const router = useRouter();
@@ -95,7 +94,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
                             <>
                                 <Link href="/" className="p-2">←</Link>
                                 <Link href="/rube" className="text-md font-semibold hover:underline">
-                                    Ruhu'l Beyan
+                                    Ruhu&apos;l Beyan
                                 </Link>
                             </>
                         )}

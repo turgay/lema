@@ -36,7 +36,7 @@ export default function RubePage() {
           </div>
         </div>
         
-        <p className="mb-4">Rahman ve rahim olan Allah'ın adıyla</p>
+        <p className="mb-4">Rahman ve rahim olan Allah&apos;ın adıyla</p>
         
         <div className="text-right mb-2">
           <p className="text-2xl mb-1">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
@@ -45,7 +45,7 @@ export default function RubePage() {
         
         <div className="mb-4">
           <h3 className="font-semibold mb-2">1.</h3>
-          <p className="mb-2">De ki: O, Allah'tır, gerçek İlahtır ve Birdir.</p>
+          <p className="mb-2">De ki: O, Allah&apos;tır, gerçek İlahtır ve Birdir.</p>
           <div className="text-right">
             <p className="text-2xl mb-1">قُلْ هُوَ اللَّهُ أَحَدٌ</p>
             <p className="text-sm text-green-600">Kul huvallahu ehad.</p>

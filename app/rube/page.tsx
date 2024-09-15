@@ -1,12 +1,11 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import styles from './RubePage.module.css';
 
 export default function RubePage() {
   const [htmlContent, setHtmlContent] = useState('');
-  const router = useRouter();
   const searchParams = useSearchParams();
 
   useEffect(() => {
