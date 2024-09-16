@@ -14,7 +14,7 @@ function ClientLayoutContent({ children }: { children: React.ReactNode }) {
             <Header isBookPage={isBookPage} />
             <main className="flex-grow overflow-x-hidden w-full">
                 <div className="flex flex-col justify-between min-h-full w-full font-[family-name:var(--font-geist-sans)]">
-                    <div className="flex-grow w-full">
+                    <div className={`flex-grow w-full ${isBookPage ? 'mt-6 sm:mt-8' : ''}`}>
                         {children}
                     </div>
                     <Footer />
