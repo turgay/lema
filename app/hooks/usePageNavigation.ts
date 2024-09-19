@@ -29,6 +29,34 @@ export function usePageNavigation() {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [pageNum]);
 
+    useEffect(() => {
+        let touchStartX: number;
+
+        const handleTouchStart = (e: TouchEvent) => {
+            touchStartX = e.touches[0].clientX;
+        };
+
+        const handleTouchEnd = (e: TouchEvent) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
+
+            console.log("diff=" +diff)
+
+            if (Math.abs(diff) > 50) { // 50px threshold, adjust as needed
+                changePage(diff > 0 ? 1 : -1);
+            }
+        };
+
+        // Add event listeners for both keyboard and touch
+        window.addEventListener('touchstart', handleTouchStart);
+        window.addEventListener('touchend', handleTouchEnd);
+
+        return () => {
+            window.removeEventListener('touchstart', handleTouchStart);
+            window.removeEventListener('touchend', handleTouchEnd);
+        };
+    }, [pageNum]);
+
     const updateSelectedSurah = (page: string) => {
         const pageNumber = parseInt(page, 10);
         const surah = surahList.find(s => s.startPage <= pageNumber && s.endPage >= pageNumber);
