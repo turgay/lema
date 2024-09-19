@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 
 function ClientLayoutContent({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
-    const isBookPage = pathname?.startsWith('/rube'); // TODO Update this when more books are added
+    const isBookPage = pathname?.startsWith('/rube') ?? false; // TODO Update this when more books are added
 
     return (
         <div className="flex flex-col min-h-screen">
