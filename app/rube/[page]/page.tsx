@@ -1,27 +1,23 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import styles from './RubePage.module.css';
 
 export default function RubePage() {
   const [htmlContent, setHtmlContent] = useState('');
-  const searchParams = useSearchParams();
+  const params = useParams();
 
   useEffect(() => {
-    const page = searchParams?.get('page') || '1';
+    const page = params?.page as string || '1';
     fetchPageContent(parseInt(page, 10));
-  }, [searchParams]);
+  }, [params]);
 
   const fetchPageContent = (page: number) => {
     fetch(`/api/getHtmlContent?page=${page}`)
       .then(response => response.text())
       .then(content => {
-        const fixedContent = content
-          .replace(
-            /<img\s+src="([^"]+)"/g,
-            (match, src) => `<img src="rube/${src.split('/').pop()}"`
-          )
+        const fixedContent = content         
           .replace(/<b>(.*?)<\/b><br\/>/g, '<b>$1</b><p></p>')
           .replace(/\.<br\/>/g, '.<p/>')
           .replace(/<br\s*\/?>/g, ' ');

@@ -4,7 +4,7 @@ import Link from "next/link";
 function TefsirlerContent() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-1 gap-4 w-full">
-      <Link href="/rube" className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+      <Link href="/rube/1" className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
         <h2 className="text-xl font-semibold mb-2">Rûḥu'l-Beyân</h2>
         <p className="text-sm text-gray-600">İsmâil Hakkı Bursevî</p>
       </Link>

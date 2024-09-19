@@ -18,7 +18,7 @@ export default function Header({ isBookPage }: HeaderProps) {
                     {isBookPage && (
                         <>
                             <Link href="/" className="p-1 sm:p-2">←</Link>
-                            <Link href="/rube" className="text-sm sm:text-md font-semibold hover:underline">
+                            <Link href="/rube/1" className="text-sm sm:text-md font-semibold hover:underline">
                                 Ruhu&apos;l Beyan
                             </Link>
                         </>

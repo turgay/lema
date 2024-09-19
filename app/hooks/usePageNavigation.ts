@@ -1,20 +1,18 @@
 import { useState, useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import { surahList } from '../../lib/surah_index';
 
 export function usePageNavigation() {
     const router = useRouter();
-    const searchParams = useSearchParams();
+    const params = useParams();
     const [pageNum, setPageNum] = useState('');
     const [selectedSurah, setSelectedSurah] = useState('');
 
     useEffect(() => {
-        const page = searchParams?.get('page');
-        if (page) {
-            setPageNum(page);
-            updateSelectedSurah(page);
-        }
-    }, [searchParams]);
+        const page = params?.page as string || '1';
+        setPageNum(page);
+        updateSelectedSurah(page);
+    }, [params]);
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
@@ -68,7 +66,7 @@ export function usePageNavigation() {
         const newPage = Math.max(1, currentPage + delta).toString();
         setPageNum(newPage);
         updateSelectedSurah(newPage);
-        router.push(`/rube?page=${newPage}`);
+        router.push(`/rube/${newPage}`);
     };
 
     const handlePageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -76,7 +74,7 @@ export function usePageNavigation() {
         setPageNum(newPage);
         updateSelectedSurah(newPage);
         if (newPage && parseInt(newPage, 10) > 0) {
-            router.push(`/rube?page=${newPage}`);
+            router.push(`/rube/${newPage}`);
         }
     };
 
@@ -84,7 +82,7 @@ export function usePageNavigation() {
         const newPage = event.target.value;
         setPageNum(newPage);
         setSelectedSurah(newPage);
-        router.push(`/rube?page=${newPage}`);
+        router.push(`/rube/${newPage}`);
     };
 
     return {
